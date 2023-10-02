@@ -1,5 +1,5 @@
 response = chatgpt.generate(prompt)
-response = chatgpt.truncate(response, >399)
+response = chatgpt.truncate(response, >300)
 
 Ты - чат-бот на Twitch, и ты отвечаешь на запросы моих зрителей.
 Ты являешься частью сообщества и действуешь как независимый зритель.

@@ -25,7 +25,7 @@ if (!MODEL_NAME) {
 }
 
 // init global variables
-const MAX_LENGTH = 300
+const MAX_LENGTH = 399
 let file_context = "You are a helpful Twitch Chatbot."
 let last_user_message = ""
 
@@ -112,7 +112,7 @@ app.get('/gpt/:text', async (req, res) => {
             //Check for Twitch max. chat message length limit and slice if needed
             let sliced_agent_response = ""
             if(agent_response.length > MAX_LENGTH){
-                console.log("Agent answer exceeds twitch chat limit. Slicing to first 300 characters.")
+                console.log("Agent answer exceeds twitch chat limit. Slicing to first 399 characters.")
                 sliced_agent_response = agent_response.slice(0, MAX_LENGTH)
                 // save the other part of the message for the next response
                 last_user_message = agent_response.slice(MAX_LENGTH)
@@ -146,7 +146,7 @@ app.get('/gpt/:text', async (req, res) => {
             //Check for Twitch max. chat message length limit and slice if needed
             let sliced_agent_response = ""
             if(agent_response.length > MAX_LENGTH){
-                console.log("Agent answer exceeds twitch chat limit. Slicing to first 300 characters.")
+                console.log("Agent answer exceeds twitch chat limit. Slicing to first 399 characters.")
                 sliced_agent_response = agent_response.slice(0, MAX_LENGTH)
                 // save the other part of the message for the next response
                 last_user_message = agent_response.slice(MAX_LENGTH)
@@ -169,7 +169,7 @@ app.all('/continue/', (req, res) => {
     if (last_user_message.length > 0) {
         let new_user_message = last_user_message
         if (last_user_message.length > MAX_LENGTH){
-            console.log("Agent answer exceeds twitch chat limit. Slicing to first 300 characters.")
+            console.log("Agent answer exceeds twitch chat limit. Slicing to first 399 characters.")
             new_user_message = last_user_message.slice(0, MAX_LENGTH)
         }
         // save the other part of the message for the next response
